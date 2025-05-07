@@ -6,7 +6,7 @@
 ### Hero [ hero-image ]
 hero:
   image: "assets/img/profile.png"
-  image_alt: "이태원1"
+  image_alt: "이태강강"
   before_title: "환영합니다, <b>제 이름은</b>"
   title: "<b>Taewon</b> Lee"
   after_title: "I am <strong>Cyber Security Professional</strong>"
