@@ -32,31 +32,31 @@ services:
   bg_title: "Services"
 
   items:
-    - title: "Web Design &amp; Logo"
+    - title: "Web application"
       subtitle: "Web Development"
       text: "Web designers craft the overall vision &amp; plan for a website layout. Professional logo development: Business, Company, or Personal."
       button_label: "See Pricing"
       button_link: "#pricing-section"
 
-    - title: "iOS &amp; Android"
+    - title: "Python"
       subtitle: "Apps Development"
       text: "Design Software applications to run on mobile devices. Modern and mobile-ready application that will help you reach all of your marketing."
       button_label: "See Pricing"
       button_link: "#pricing-section"
 
-    - title: "Unity &amp; Unreal Engine"
+    - title: "C 언어"
       subtitle: "Game Development"
       text: "Creating games &amp; describes the design, development and release of a game. Developing unique mobile android and ios games."
       button_label: "See Pricing"
       button_link: "#pricing-section"
 
-    - title: "Google Ads"
+    - title: "네트워크 관리사"
       subtitle: "Advertising"
       text: "Advertising services include: Google search result pages, gmails, YouTube and other websites participated in Google Ads program."
       button_label: "See Pricing"
       button_link: "#pricing-section"
 
-    - title: "Sound Track"
+    - title: "리눅스 마스터"
       subtitle: "Music Writing"
       text: "Music copying, writing, creating, transcription and composition services."
       button_label: "See Pricing"
