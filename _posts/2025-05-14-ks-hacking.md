@@ -4,7 +4,7 @@ title: "KS한국 고용 침해사고"
 date: 2025-05-14
 category:
   - Video
-image: assets/img/5_14_과제/KS incident.jpg
+image: assets/img/5_14_work/KS incident.jpg
 author: lee tae gang
 tags: Jekyll
 ---
@@ -16,7 +16,7 @@ tags: Jekyll
 2025년 4월 19일, KS한국고용정보가 외부의 공격을 받아 개인 정보 유출 사고사 발생했다.<br/>
 이 때, 유출된 데이터는 이름, 생년월일, 주민등록번호(뒷자리 포함), 이메일 주소, 비밀번호, 주소, 계좌번호, 전화번호 등의 정보이며 총 22Gb의 분량으로 다크웹에서 해당 정보들에 대한 판매가 시도되었다.  <br/>
 
-![KS 고용정보 침해사고](assets/img/5_14_과제/KS_2.jpg)
+![KS 고용정보 침해사고](assets/img/5_14_work/KS_2.jpg)
 
 <타임라인>  <br/><br/> 
 

@@ -32,9 +32,9 @@ services:
   bg_title: "Services"
 
   items:
-    - title: "Web application"
-      subtitle: "Web Development"
-      text: "Web designers craft the overall vision &amp; plan for a website layout. Professional logo development: Business, Company, or Personal."
+    - title: "사이버 보안안"
+      subtitle: "cyber security"
+      text: "사이버 보안은 컴퓨터 시스템, 네트워크 및 데이터의 무단 액세스, 공격 또는 손상으로부터 보호하는 것을 포함합니다."
       button_label: "See Pricing"
       button_link: "#pricing-section"
 
