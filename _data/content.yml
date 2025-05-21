@@ -13,7 +13,7 @@ hero:
   description: "폴리텍 대학 강서캠퍼스 사이버 보안과 2학년 입니다."
   button1:
     label: "이력서 다운받기"
-    link: "#"
+    link: "https://www.kopo.ac.kr/kangseo/index.do"
   button2:
     label: "My Skills"
     link: "#skills-section"
@@ -32,7 +32,7 @@ services:
   bg_title: "Services"
 
   items:
-    - title: "사이버 보안안"
+    - title: "사이버 보안"
       subtitle: "cyber security"
       text: "사이버 보안은 컴퓨터 시스템, 네트워크 및 데이터의 무단 액세스, 공격 또는 손상으로부터 보호하는 것을 포함합니다."
       button_label: "See Pricing"
@@ -40,25 +40,25 @@ services:
 
     - title: "Python"
       subtitle: "Apps Development"
-      text: "Design Software applications to run on mobile devices. Modern and mobile-ready application that will help you reach all of your marketing."
+      text: "파이선은 웹 애플리케이션, 데이터 분석 및 머신 러닝을 포함한 다양한 응용 프로그램을 개발하는 데 사용됩니다."
       button_label: "See Pricing"
       button_link: "#pricing-section"
 
     - title: "C 언어"
-      subtitle: "Game Development"
-      text: "Creating games &amp; describes the design, development and release of a game. Developing unique mobile android and ios games."
+      subtitle: "C Programming"
+      text: "C 언어는 시스템 소프트웨어 및 응용 프로그램 소프트웨어를 개발하는 데 사용되는 프로그래밍 언어입니다."
       button_label: "See Pricing"
       button_link: "#pricing-section"
 
     - title: "네트워크 관리사"
-      subtitle: "Advertising"
-      text: "Advertising services include: Google search result pages, gmails, YouTube and other websites participated in Google Ads program."
+      subtitle: "Network Management"
+      text: "네트워크 관리사는 컴퓨터 네트워크의 설치, 구성 및 유지 관리를 담당하는 IT 전문가입니다."
       button_label: "See Pricing"
       button_link: "#pricing-section"
 
     - title: "리눅스 마스터"
-      subtitle: "Music Writing"
-      text: "Music copying, writing, creating, transcription and composition services."
+      subtitle: "OS Operation"
+      text: "리눅스 마스터는 리눅스 운영 체제를 설치, 구성 및 관리하는 데 전문화된 IT 전문가입니다."
       button_label: "See Pricing"
       button_link: "#pricing-section"
 
@@ -70,7 +70,7 @@ skills:
 
   column1:
     items:
-      - label: "PHP" #0-10 progress in dots
+      - label: "C 언어" #0-10 progress in dots
         text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
         value: "85" #0-100 progress in %
 
@@ -94,7 +94,7 @@ skills:
         text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
         value: "90" #0-100 progress in %
 
-      - label: "Adobe XD" #0-10 progress in dots
+      - label: "네트워크" #0-10 progress in dots
         text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
         value: "80" #0-100 progress in %
 
@@ -125,9 +125,9 @@ resume:
   experience:
     title: "Experience"
     items:
-      - name: "UI Head &amp; Manager"
-        subname: "Soft Tech Inc."
-        period: "2020 - <b>Present</b>"
+      - name: "플라잉 더치맨 호 선장장"
+        subname: "융합 프로젝트트"
+        period: "2025.03.11 - <b>Present</b>"
         text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
 
       - name: "UI / UX Specialist"
@@ -257,7 +257,7 @@ contacts:
   list:
     - label: "Address"
       icon: "far fa-map"
-      text: "Politech, Seoulg, KOREA"
+      text: "GangSeo, Seoul, KOREA"
 
     - label: "Freelance"
       icon: "far fa-user"
