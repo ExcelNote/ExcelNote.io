@@ -4,7 +4,7 @@ title: "KS한국 고용 침해사고"
 date: 2025-05-14
 category:
   - Video
-image: ({{ site.baseurl }}assets/img/5_14_work/KS incident.jpg)
+image: assets/img/5_14_work/KS incident.jpg
 
 author: lee tae gang
 tags: Jekyll
