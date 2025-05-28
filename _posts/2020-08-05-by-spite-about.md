@@ -226,49 +226,49 @@ LTE 네트워크에서 HSS(Home Subscriber Server)는 USIM의 암호키(Ki), IMS
 
 
 
-<원본 단말기 전원이 꺼졌을 때의 다이어그램> 
+원본 단말기 전원이 꺼졌을 때의 다이어그램
 
 
 -----------------------------------------------------------------------------
 sequenceDiagram   <br/>
 
-    participant 복제폰  
+    participant 복제폰  <br/>
 
 
-    participant HLR 
+    participant HLR <br/>
 
 
-    participant MSC/VLR   
+    participant MSC/VLR   <br/>
 
   
 
 
 
-    원본폰->>HLR: 전원 OFF → HLR에서 IMSI 비활성화 지연   
+    원본폰->>HLR: 전원 OFF → HLR에서 IMSI 비활성화 지연   <br/>
 
 
 
-    복제폰->>MSC/VLR: IMSI로 Location Update 요청   
+    복제폰->>MSC/VLR: IMSI로 Location Update 요청   <br/>
 
 
 
-    MSC/VLR->>HLR: IMSI 상태 확인   
+    MSC/VLR->>HLR: IMSI 상태 확인   <br/>
 
 
 
-    HLR-->>MSC/VLR: "IMSI 비활성화"로 간주 → 접속 허용   
+    HLR-->>MSC/VLR: "IMSI 비활성화"로 간주 → 접속 허용   <br/>
 
 
 
-    복제폰-->>MSC/VLR: 통신 시작   
+    복제폰-->>MSC/VLR: 통신 시작   <br/>
 
 
 
-    Note over HLR: Implicit Detach Timer 만료 후 IMSI 완전 차단   
+    Note over HLR: Implicit Detach Timer 만료 후 IMSI 완전 차단   <br/>
 
     
 ------------------------------------------------------------------------------
- 
+ <br/><br/>
 
  
 
