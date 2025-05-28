@@ -1,32 +1,354 @@
 ---
 layout: post
-title:  "By spite about do of do allow"
-date:   2020-08-05
+title:  "SKT 유심 정보 유출 보고서"
+date:   2025-04-29
 category: Music
-image: assets/img/blog/blog9.jpg
-author: Ryan Adlard
+image: assets\img\5_28_work\USIM.jpg
+author: 이태강
 tags: rock
 ---
 
-So striking at of to welcomed resolved. Northward by described up household therefore attention. Excellence decisively nay man yet impression for contrasted remarkably.
-
-Forfeited you engrossed but gay sometimes explained. Another as studied it to evident. Merry sense given he be arise. Conduct at an replied removal an amongst. Remaining determine few her two cordially admitting old.
+[SKT 유심 정보 유출 보고서] 
 
 
-> Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Pellentesque suscipit.
 
-Tiled say decay spoil now walls meant house. My mr interest thoughts screened of outweigh removing. Evening society musical besides inhabit ye my. Lose hill well up will he over on. Increasing [link](#) sufficient everything men him admiration unpleasing .
+[사고 개요] 
 
-* Greatest properly off ham exercise all.
-* Unsatiable invitation its possession nor off.
-* All difficulty estimating unreserved increasing the solicitude.
+    <SKT 침해 사고 타임라인> 
 
-Unpleasant astonished an diminution up partiality. Noisy an their of meant. Death means up civil do an offer wound of.
+4월 18일(금) 
 
-```ruby
-def print_hi(name)
-  puts "Hi, #{name}"
-end
-print_hi('Ryan')
-#=> prints 'Hi, Ryan' to STDOUT.
-```
+장비간 비정상 데이터 이동 감지, 공격 사실 및 악성코드 확인 
+
+4월 19일(토) 
+
+장비 격리, 데이터 분석, HSS서버에서 대규모 유출 확인 
+
+4월 20일(일) 
+
+KISA에 침해사고 신고 
+
+4월 22~23일 
+
+개인정보보호위 신고보고 
+
+4월 25~28일 
+
+SKT 대표 사과 및 유심 무상 교체 발표 및 시행 
+
+4월 30일(수) 
+
+국회청문회, 재발 방지책 등 논의 
+
+<KISA, 침해사고 위협정보> 
+
+![SKT 침해사고 해시값]({{ site.baseurl }}/assets/img/5_28_work/skt1.png)
+
+4월19일 23시 40분경 SKT 에서 해커의 악성코드로 인해  9.7 Gb에 달하는 데이터가  HSS서버에서 외부로 전송된 것이 확인되었고 이 때 SKT에 의하면 전화번호, 유심 인증키(Ki), 국제 모바일 가입자 식별 번호(IMSI), 단말기 고유식별번호(IMEI), 유심 칩 고유 일련번호(ICCID)가 유출되었고 주민 등록번호, 생년월일, 결제 계좌번호 등과 같은 민감한 개인정보는 유출되지 않았지만 유심 인증키, IMSI, IMEI 등 불법 유심 복제나 심 스와핑(유심 정보 도용을 통한 공격)등에 악용될 수 있다. 하지만 공인인증서와 같은 인증에서의 직접적인 유출이 없어 인증서의 사용이 불가하며, 심클로닝을 통한 복제폰의 SMS로 전달되는 OTP를 탈취하여 공인인증서의 2차인증을 우회 할 수 있지만 공인인증서를 자체 사용에는 별도의 비밀번호 같은 추가인증이 필요하기에 인증서의 사용이 불가능하다. 
+
+[사고 원인] 
+
+![BPF 도어]({{ site.baseurl }}/assets/img/5_28_work/skt2.png)
+
+BPF 도어란? 
+
+BPF 도어는 2021년 PWC 위협 보고서에 처음 공개된 백도어 악성코드로 리눅스 커널 내 가상 머신에 BPF 필터를 삽입해 네트워크 방화벽을 우회할 수 있는 수법이며 중국 해커 그룹이 주로 사용한다. 
+
+ 
+
+1.초기 침투 및 잠복 
+
+매직 패킷 활성화: 특정 패턴의 네트워크 패킷(매직패킷) 수신 시 악성코드가 활성화되며, 이 패킷은 일반 보안 장비 탐지를 우회한다. 
+
+은닉 경로 활용: /tmp/zabbix_agent.log, /bin/vmtoolsdsrv 등 포렌식 분석을 어렵게 하는 경로에 위장 설치해 탐지 회피와 분석 지연을 동시에 달성한다. 
+
+2. 명령 통제 및 확산 
+
+다중 프로토콜 활용:  ICMP 오류 메시지 변조를 통해 TCP 세션의 MTU 값을 조작, IP 단편화를 유발해 공격자가 악성 페이로드를 주입하고 SYN/ACK 패킷 변조를 통한 역방향 셸을 연결시키는 TCP 세션 하이재킹이 가능하다. 
+
+역방향 셸(reverse shell):  공격자는 전용 컨트롤러로 감염 서버에 접속한 후 암호 인증을 거쳐 원격 제어해 실행된 프로세스의 사용자 권한을 그대로 상속받는다. 
+
+3. 탐지 회피 기술 
+
+정상 프로세스 위장: 시스템 프로세스로 위장해 프로세스 목록에서 정상적인 활동처럼 위장 
+
+네트워크 트래픽 위장: BPF 필터를 커널 단에 삽입해 방화벽이나 IDS/IPS 탐지를 우회 
+
+ 
+
+[SKT 사례에서의 BPF 도어] 
+
+공격 경로: 해커가 HSS 서버에 BPF 도어를 설치한 후, 유심(USIM) 인증키 등 핵심 정보를 탈취 
+
+확산 메커니즘: 단일 서버 침해에서 그치지 않고 내부 네트워크로 확장되어 대규모 유출 
+
+대응 쟁점: BPF 도어의 은닉성으로 인해 초기 대응이 지연되었으며, KISA는 사고 5일 후 위협 정보를 공유 
+
+[HSS 서버의 해킹] 
+
+HSS서버 (홈 가입자 서버)란? 
+
+ HSS서버는 SKT 등 이동 통신사 네트워크에서 사용하는 Home Subscriber Server 의 약자로 LTE, 5G 등 이동 통신 서비스에서 핵심적인 역할을 하는 최상의 계층의 서버 
+
+가입자 정보 저장: 모든 가입자의 전화번호, 국제 모바일 가입자 식별번호(IMSI), 단말기 고유식별 번호(IMEI), 유심(USIM)인증키 (Ki)등 통신 서비스 제공에 필요한 정보를 저장 
+
+통신 서비스 제공 지원: 기지국 노드 값 등 음성, 데이터 서비스 제공에 필요한 정보를 통합 관리 
+
+인증 및 보안: 가입자 인증, 통신 암호화 등 네트워크 보안의 핵심 역할의 기능을 한다. 
+
+HSS와 LTE/5G의 네트워크 관계 
+
+네트워크 종류 
+
+HSS/UDM 연동 주요 장비 
+
+역할 
+
+LTE 
+
+MME, S-GW,P-GW,PCRF-IMS 
+
+인증, 위치등록, 로밍, 데이터 
+
+5G 
+
+AMF, SMF,UDM, AUSF, PCF, IMS 
+
+인증, 데이터관리, 세션 관리, 로밍 
+
+ 
+
+ 
+![LTE와 5G의 도식]({{ site.baseurl }}/assets/img/5_28_work/skt3.png)
+ 
+
+LTE 네트워크 
+
+LTE 네트워크에서 HSS(Home Subscriber Server)는 USIM의 암호키(Ki), IMSI(국제 모바일 가입자 식별번호), SQN(순차 번호) 등 모든 가입자 정보를 중앙 집중식으로 관리하며, MME(Mobility Management Entity)을 통해 인증 및 위치 관리를 담당한다. 그러나 EPS-AKA 프로토콜의 취약점으로 인해 IMSI가 초기 접속 시 암호화되지 않고 평문으로 전송되며, SQN 동기화가 미흡해 중간자 공격(MITM) 에 취약하다. 이로 인해 공격자는 HSS와 MME 간 Diameter 세션을 하이재킹해 위조된 CLR(Cancel Location Request)/IDR(Insert Subscriber Data Request) 메시지를 주입할 수 있고, 이번 SKT사례에서도 BPF도어 악성코드가 HSS서버에 침투해 Ki값을 추출하여 복제 유심을 제작이 가능하다. 
+
+ 
+
+5G 네트워크 
+
+5G 네트워크에서는 기존 LTE의 중앙집중식 HSS 기능을 분산형 구조로 발전시켜, UDM(Unified Data Management)이 가입자 인증과 관리를 담당하고, UDR(Unified Data Repository)에 데이터를 분산 저장해 단일 장애점의 위험을 감소시켰으며 5G-AKA 인증 방식과 SUCI(Subscriber Concealed Identifier)를 도입해 가입자 식별 정보를 암호화하고, 로밍 시에는 SEPP(Security Edge Protection Proxy)를 통해 메시지 암호화와 무결성 검증을 강화함으로써 중간자 공격(MITM) 등 다양한 위협에 대한 보안성을 크게 높였다. 하지만 5G NSA(비독립형) 모드에서는 여전히 LTE의 HSS와 코어 네트워크에 의존하기 때문에, HSS가 해킹될 경우 BPF도어 악성코드 등 기존 LTE 기반 공격에 그대로 노출되며, 그 결과 LTE의 사례처럼 Ki 값이 탈취되어 복제 유심 제작이 가능하다. 
+
+ 
+
+[유심 인증키(Ki)의 유출] 
+
+유심의 인증키(Ki)란? 
+
+이동통신 네트워크에서 가입자를 인증하는 데 사용하는 암호화된 비밀키로 전세계에서 단 한명의 가입자르 식별하게 끔 설계되었고 휴대폰(USIM)과 통신사 서버(HSS)에 동일하게 저장되어 있기에, 통신사와 단말기는 인증키를 이용해 서로 “진짜 사용자” 임을 확인하고, 이 인증키가 외부로 노출되지 않도록 보호하지만, 만약 Ki와 IMSI가 함께 유출되면 해당 사용자의 신원을 네트워크에서 완벽하게 복제가 가능하다. 따라서, 이번 SKT에서 유출된 정보는 IMSI, Ki, 전화번호 등 USIM 복제에 활용될 수 있는 핵심 정보로 다른 유심 칩에 해당 정보를 복제해 피해자와 같은 번호로 전호, 문자, 데이터 통신을 사용할 수 있다. 
+
+ 
+
+왜 유심 비밀번호를 바꿔도 소용이 없는가? 
+
+유심 비밀번호(PIN)는 휴대폰 분실처럼 유심 칩을 분실 또는 도난당했을 때, 제3자가 해당 유심을 다른 기기에 꽂아 무단으로 사용이 불가능하게 해주는 “물리적 보호” 기능이기에, 이번 SKT 유심 정보 유출처럼 Ki와 IMSI등 인증 정보 자체가 유출된 경우 이정보를 바탕으로 새로운 유심 복제가 가능하기에, 비밀번호를 바꾸는 것이 근본적이 해결책이 될 수 없다. 
+
+[복제폰의 사용] 
+
+심클로닝을 통한 복제폰이 생성되어도 동일한 IMSI로 두 대 이상의 단말기가 동시에 통신망에 접속이 불가능한데, FDS등을 통해 여러 곳에서 동시에 접속을 시도하면 이를 즉시 차단하는데 이런 이유로 복제폰이 네트워크에 접속을 하기 위해서는 원본 단말기의 전원이 꺼져 있어야 한다. 만약 켜져 있다면 복제폰은 통신이 불가능하기에, 해커들은 피해자에게 “휴대폰을 재부팅”하라는 피싱 메시지를 보냄으로써, 피해자의 단말기 전원이 꺼져 네트워크에서 로그아웃이 되면 해커의 복제폰이  그 틈을 노려 접속할 수 있게 하고 더 나아가 악성 앱 설치를 유도하게 끔 링크를 첨부하기 때문에, 해당 메시지를 수신했을 때, 무시하는 것이 안전하다. 
+
+<원본 단말기 전원이 꺼졌을 때의 다이어그램> 
+
+sequenceDiagram   
+
+    participant 복제폰   
+
+    participant HLR   
+
+    participant MSC/VLR   
+
+  
+
+    원본폰->>HLR: 전원 OFF → HLR에서 IMSI 비활성화 지연   
+
+    복제폰->>MSC/VLR: IMSI로 Location Update 요청   
+
+    MSC/VLR->>HLR: IMSI 상태 확인   
+
+    HLR-->>MSC/VLR: "IMSI 비활성화"로 간주 → 접속 허용   
+
+    복제폰-->>MSC/VLR: 통신 시작   
+
+    Note over HLR: Implicit Detach Timer 만료 후 IMSI 완전 차단   
+
+ 
+
+ 
+
+![원본 단말기의 전원이 꺼지면 복제 단말기가 접속이된다.]({{ site.baseurl }}/assets/img/5_28_work/skt4.png)
+
+ 
+
+[사후 대응 방안] 
+
+[SKT의 대응] 
+
+SKT는 사고 인지 즉시 악성코드를 신속히 제거하고, 감염된 장비를 네트워크에서 격리하였으며, 전체 시스템에 대한 전수조사를 실시하여 불법 유심 기기변경 및 비정상 인증 시도 차단을 강화하였고 또한, 피해가 의심되는 징후가 발견될 경우 즉각적으로 이용을 정지하여 고객에게 신속하게 안내하고 유심 복제 방지를 위해 유심 무상 교체, 유심보호서비스 무료 제공, 비정상 인증 시도에 대한 실시간 탐지 및 차단(FDS) 등 세 가지 주요 대응 방안을 마련하여 시행하고 있다. 
+
+ 
+
+유심 보호 서비스 제공 
+
+유심 보호는 비정상 기기 등록 차단을 목적으로 하며, 이 서비스에 가입하면 고객이 등록한 단말기 외에 다른 기기에서 유심을 사용할 수 없어, 복제된 유심을 통한 인증 시도가 차단되는데, 해외 로밍이 제한되어, 로밍을 자주 사용하는 이용자에게는 불편함을 초래하며, 기존 유심이 존재해 유심 자체를 교체하는 물리적 조치에 비해 
+
+완전히 해킹 위험을 제거할 수 없다.  
+
+ 
+
+유심 무상 교체 
+
+유심(USIM)의 무상 교체의 주된 이유는 유출된 Ki값의 실효성 무력화로, HSS서버에서 탈취된 Ki값은 유심 복제의 핵심 요소이기에, 물리적으로 유심 교체를 통해 새로운 IMSI와 Ki를 발급하면 유심 칩 고유 일련번호(ICCID)가 변경되어 기존의 유심을 복제한 유심이 인증 시도 자체를 차단할 수 있게 되지만, 현재 유심 재고의 부족과 금융, 인증 서비스 재설정이 필요한 등의 불편함이 존재한다. 
+
+ 
+
+비정상 인증 시도 차단(FDS)의 기준 격상 
+
+FDS 는 이상 거래 또는 비정상 인증 시도를 실시간 탐지해 차단하는 시스템으로 거래 패턴, 위치 정보, 기기 식별자 등을 분석해 의심스러운 활동을 차단하는데, 복제 유심을 통해 동시 다중 기기 접속을 탐지하는 경우 두 기기 모두 접속을 차단하며, 해외 로밍 시 비정상 적인 데이터 사용 패턴을 감지할 경우 실시간 세션을 종료한다. 
+
+ 
+
+명의 도용 방지 서비스 
+
+본인 명의로 휴대폰의 신규 개통과 번호 이동, 명의 변경 등 통신 서비스 가입이 발생할 경우, 실시간으로 알림을 주고 사전에 개통을 차단할 수 있도록 해 자신 명의의 휴대폰 번호가 타인에 의해 불법 개통되거나 인터넷 문자 발송 등에 악용되는 것을 막아주며, 해당 서비스는 한국정보통신진흥협회(KAIT)의 PASS앱, 카카오뱅크 등에서 신청이 가능하다. 
+
+[정부의 대응] 
+
+1. 국가정보원(국정원) 
+
+전 부처 및 공공기관에 유심 교체 권고 
+정부 전 부처, 산하기관, 지방자치단체, 교육청 등 모든 공공 조직에 SKT 유심을 사용하는 업무용 단말기(휴대폰, 태블릿, LTE/5G 라우터, 에그 등)의 유심 즉시 교체를 지시 
+
+유심보호서비스 가입 권고 
+유심 교체 전까지 유심보호서비스(무단 기기변경, 로밍 차단 등) 부가서비스에 반드시 가입하도록 요청 
+
+2. 과학기술정보통신부 
+
+민관합동조사단 운영 및 현장 조사 
+SKT 본사에 비상대책반을 꾸리고, KISA(한국인터넷진흥원) 전문가 파견 및 현장 조사 실시 
+
+기술적 대응 
+유심보호서비스에 가입하면 유출된 정보만으로는 유심 복제나 심 스와핑이 불가능하다고 안내 
+비정상 인증 시도 차단(FDS) 시스템 등으로 불법 유심 복제 시도 사전 탐지, 차단 
+
+자료 보존 및 제출 명령 
+사고 원인 분석과 피해 확산 방지를 위해 SKT에 자료 보존, 제출 요구 
+
+3. 개인정보보호위원회 
+
+법적 조사 및 처분 예고 
+유출 경위, 피해 규모, 안전조치 의무 준수 여부 등 조사 
+법 위반 시 엄정 처분 방침 
+
+4. 국회 
+
+이용자 보호 입법 추진 
+사고 조사 기간 동안 이용자가 통신사 해지 시 위약금 면제 등 ‘전기통신사업법’ 개정안 발의, 통신사의 중대한 과실로 인한 침해사고 시 신규모집 중단, 해지 위약금 면제 등 이용자 권리 보장 강화 
+
+[개인의 대응] 
+
+2차 인증 및 계정 보안 강화 
+
+금융 앱 등에서 SMS 인증 대신 OTP, 생체인증 등 더 강력한 인증 수단을 사용 
+
+ 
+
+의심스러운 연락, 문자 주의 
+
+재부팅 요청 등의 내용을 수신할 경우 링크를 클릭하거나 안내된 행동을 금지 
+
+ 
+
+[예상되는 피해 시나리오] 
+
+이번 공격은 통신사를 속여 유심을 재발급 받는 심 스와핑(SIM Swapping)과는 다르게 통신사 내부에서 정보를 유출해 가짜 유심을 복제 후 피해자처럼 인증 받는 심 클로닝 (SIM Cloning)과 관련이 있다. 
+
+![심 클로닝]({{ site.baseurl }}/assets/img/5_28_work/skt5.png)
+
+심클로닝(SIM Cloning) 
+
+심 클로닝(SIM Cloning)은 SIM카드의 데이터를 복제해서 같은 전화번호의 ‘복제 SIM 카드’를 만드는 행위로, 피해자의 모바일 기기로 전송되는 메시지나 통화를 공격자가 확인할 수 있게 된다. 해커는 유출된 인증키(Ki), IMSI, 전화번호 같은 중요한 정보를 바탕으로 복제 유심을 만들고, 이를 이용해 피해자 몰래 통신사에 유심 기변이나 번호 이동을 요청한다. 이때 기존 기기가 꺼지기라도 하면 네트워크 연결이 끊기고, 그 틈을 타 해커의 복제폰이 대신 연결된다. 이렇게 되면 인증 문자, 통화, 2단계 인증(2FA) 코드까지 모두 해커 손에 넘어가고, 은행, 가상화폐 거래소, 이메일, SNS 계정 등에도 무단으로 접근할 수 있다. 인증 문자 하나만으로 비밀번호를 재설정하거나 계정을 탈취할 수 있기 때문에, 자산 도난은 물론이고 개인정보 침해, 신원 도용, 명예훼손 같은 2차, 3차 피해로도 이어질 수 있고 개인의 범위에서 벗어나 이용자의 메신저, 자주 연락하는 번호, 앱 정보 등을 기반으로 지인 사칭, 내부자 위장 등 사회공학적 공격을 시도할 수 있다. 
+
+ 
+
+[사전 예방 방안] 
+
+통신사 정보 유출이나 SIM 클로닝, 스와핑과 같은 공격은 단순히 개인 정보를 넘어서 금융 자산, 계정, 신원까지 탈취당할 수 있는 고위험 침해이며, 최근들어 휴대폰 번호가 여러 인증 수단의 핵심 열쇠로 사용되는 구조상, 일단 유출이 발생하고 나면 피해 규모는 통제하기 어려울 뿐만 아니라 회복에도 많은 시간과 비용이 들어가기 때문에, 아래와 같은 사전 예방 방안이 반드시 필요하다. 
+
+eBPF 실시간 추적 도구 도입 
+
+리눅스 커널의 BPF 필터 변경을 감지하기위해 eBPF 기반 모니터링 시스템을 구축해 시스템 콜, 네트워크 패킷, 파일 접근 이벤트 등을 실시간으로 추적하는 것이 가능해진다. 
+
+sudo bpftrace -e 'tracepoint:syscalls:sys_enter_bpf { printf("BPF 프로그램 로드: %s\n", str(args->prog->aux->name)); }' 
+
+비정상 패킷 탐지: 
+
+네트워크 트래픽에서 매직 패킷을 식별하기 위해 특정 헤더 값 또는 암호화된 명령어를 시그니처로 등록하고 BPF필터를 활용해 의심 패킷을 커널단에서 차단한다. 
+
+from scapy.all import *  
+
+def detect_magic_packet(pkt): if TCP in pkt and pkt[TCP].dport == 443: 
+
+     if pkt[Raw].load[16:20] == b'\x52\x93\x00\x00': # 매직 넘버 0x5293 
+
+                  alert("Magic packet detected!") 
+
+ sniff(filter="tcp", prn=detect_magic_packet) 
+
+ 
+
+포렌식 대응 체계 
+
+은닉 경로 주기적 점검 
+
+/tmp, /bin, /dev/shm등 악성 코드가 주로 은닉되는 디렉터리의 파일 무결성을 SHA-256 해시 기반으로 검증 
+
+sudo aideinit  
+
+sudo aide --check 
+
+의심 파일 대응 
+
+해시 값이 변경된 파일은 즉시 격리하고, 메모리 덤프 분석을 통해 악성 코드 여부를 확인 
+
+ 
+
+[참고 문헌] 
+
+Tuxcare, 고급 리눅스 성능 모니터링 및 보안을 위한 eBPF, https://tuxcare.com/ko/blog/ebpf-for-advanced-linux-performance-monitoring-and-security/ 
+
+전자신문, 국정원, 모든 정보 부처에 공문…“업무용 기기 SKT유심 교체 권고”, https://www.etnews.com/20250429000292 
+
+보안뉴스, [SKT 해킹 사태] 2주 간의 타임라인으로 본 사건의 재구성, https://www.boannews.com/media/view.asp?idx=137089 
+
+이데일리, 유심 비밀번호 설정은 한계…SKT 유심교체 시작, https://www.edaily.co.kr/News/Read?newsId=01695766642140384&mediaCodeNo=257 
+
+매일신문, 이학영, SKT 유심 해킹 우려 커지자 '통신사 해지 위약금 면제법' 발의, https://www.imaeil.com/page/view/2025042816513061217 
+
+TELCOWARE, 5G/LTE Core, https://www.telcoware.com/file/5G_LTE_Core.pdf 
+
+SK텔레콤, 사이버 침해 사고 관련 FAQ, https://news.sktelecom.com/211630 
+
+EST시큐리티, 유심 정보 유출 사고 발생! 지금 꼭 알아야 할 필수 보안, https://blog.alyac.co.kr/5559 
+
+보안뉴스, SKT 해킹에 쓰인 ‘BPF도어’ 악성코드는 무엇?, https://m.boannews.com/html/detail.html?tab_type=1&idx=137027 
+
+THEELEC, SKT 유심 해킹, 中 '위버 앤트' 수법과 닮았다··· 국가 기반시설 노렸나, https://www.thelec.kr/news/articleView.html?idxno=35276 
+
+KISA,  최근 해킹공격에 악용된 악성코드 위협정보 공유 및 주의 안내, https://www.boho.or.kr/kr/bbs/view.do?bbsId=B0000133&menuNo=205020&nttId=71735 
+
+KISA보호나라, SKT 해킹 이슈를 악용한 피싱 주의 권고, https://www.boho.or.kr/kr/bbs/view.do?searchCnd=&bbsId=B0000133&searchWrd=&menuNo=205020&pageIndex=1&categoryCode=&nttId=71739 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
