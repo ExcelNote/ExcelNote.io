@@ -35,31 +35,31 @@ services:
     - title: "사이버 보안"
       subtitle: "cyber security"
       text: "사이버 보안은 컴퓨터 시스템, 네트워크 및 데이터의 무단 액세스, 공격 또는 손상으로부터 보호하는 것을 포함합니다."
-      button_label: "See Pricing"
+      button_label: "자료 보기"
       button_link: "#pricing-section"
 
     - title: "Python"
       subtitle: "Apps Development"
       text: "파이선은 웹 애플리케이션, 데이터 분석 및 머신 러닝을 포함한 다양한 응용 프로그램을 개발하는 데 사용됩니다."
-      button_label: "See Pricing"
+      button_label: "자료 보기"
       button_link: "#pricing-section"
 
     - title: "C 언어"
       subtitle: "C Programming"
       text: "C 언어는 시스템 소프트웨어 및 응용 프로그램 소프트웨어를 개발하는 데 사용되는 프로그래밍 언어입니다."
-      button_label: "See Pricing"
+      button_label: "자료 보기"
       button_link: "#pricing-section"
 
-    - title: "네트워크 관리사"
+    - title: "Cisco 네트워크"
       subtitle: "Network Management"
-      text: "네트워크 관리사는 컴퓨터 네트워크의 설치, 구성 및 유지 관리를 담당하는 IT 전문가입니다."
-      button_label: "See Pricing"
+      text: "Cisco 네트워크는 Cisco Systems에서 개발한 네트워킹 기술로, 기업 및 조직의 네트워크 인프라를 구축하고 관리하는 데 사용됩니다."
+      button_label: "자료 보기"
       button_link: "#pricing-section"
 
-    - title: "리눅스 마스터"
+    - title: "linux ooperation system"
       subtitle: "OS Operation"
-      text: "리눅스 마스터는 리눅스 운영 체제를 설치, 구성 및 관리하는 데 전문화된 IT 전문가입니다."
-      button_label: "See Pricing"
+      text: "linux는 오픈 소스 운영 체제로, 서버, 데스크톱 및 임베디드 시스템에서 널리 사용됩니다."
+      button_label: "자료 보기"
       button_link: "#pricing-section"
 
 ### Skills [ skills ]
@@ -84,8 +84,8 @@ skills:
         text: "JS는 웹 개발에서 널리 사용되는 프로그래밍 언어로, 동적 웹 페이지를 만들고 사용자 인터랙션을 처리하는 데 사용됩니다."
         value: "75" #0-100 progress in %
 
-      - label: "리눅스" #0-10 progress in dots
-        text: "리눅스는 오픈 소스 운영 체제로, 서버, 데스크톱 및 임베디드 시스템에서 널리 사용됩니다."
+      - label: "linux" #0-10 progress in dots
+        text: "linux는 오픈 소스 운영 체제로, 서버, 데스크톱 및 임베디드 시스템에서 널리 사용됩니다."
         value: "70" #0-100 progress in %
 
   column3:
@@ -128,17 +128,17 @@ resume:
       - name: "IPS및 방화벽 적용 네트워크"
         subname: "팀 '플라잉 더치맨 호' 관리자"
         period: "2025.03.11 - <b>Present</b>"
-        text: "보안 망 구축을 위한 IPS 및 방화벽 적용 네트워크 구축 프로젝트를 수행하였습니다. 이 프로젝트는 사이버 보안의 기초를 다지는 데 중요한 역할을 했습니다."
+        text: "보안 망 구축을 위한 IPS 및 방화벽 적용 네트워크 구축 프로젝트를 수행하였습니다. "
 
       - name: "네트워크 관리를 위한 웹페이지"
         subname: "간단한 SIEM 구축"
         period: "2025.03.11 - <b>Present</b>"
-        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+        text: "네트워크 관리를 위한 웹페이지 구축 프로젝트를 수행하였습니다. "
 
-      - name: "Plugins Developer"
-        subname: "Fiverr.com"
-        period: "2016 - 2018"
-        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+      - name: "융합 프로젝트 2 (예정)"
+        subname: "2학기 수업"
+        period: "2025.09.01 - 2025.12.31"
+        text: "-"
 
 
 ### Testimonials [ testimonials ]
@@ -163,15 +163,6 @@ testimonials:
       role: "방화벽 구축"
       text: "방화벽 구축 등 네트워크 보안 프로젝트에서 중요한 역할을 했습니다."
 
-    - image: "assets/img/testimonials/testi4-3.jpg"
-      name: "Jennifer Smith"
-      role: "CEO &amp; Founder"
-      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-
-    - image: "assets/img/testimonials/testi4-5.jpg"
-      name: "Paul Freeman"
-      role: "Photographer"
-      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
 
 
 ### Pricing [ pricing ]
