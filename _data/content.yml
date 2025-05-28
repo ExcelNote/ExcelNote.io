@@ -12,7 +12,7 @@ hero:
   after_title: "I am <strong>Cyber Security Professional</strong>"
   description: "폴리텍 대학 강서캠퍼스 사이버 보안과 2학년 입니다."
   button1:
-    label: "학회 논문 발표표"
+    label: "학회 발표 논문"
     link: "https://drive.google.com/file/d/102MS7p5X7TXKLUjU2sJIaB0A7DmpFNd3/view?usp=drive_link"
   button2:
     label: "My Skills"
@@ -105,22 +105,22 @@ resume:
   bg_title: "History"
 
   education:
-    title: "자격증증"
+    title: "자격증"
     items:
-      - name: "정보처리산업기사"
-        subname: "Faculty of Cyber Security"
-        period: "2025-06-13"
-        text: "한국산업인력공단"
+      - name: "리눅스 마스터 2급"
+        subname: "한국정보통신진흥협회"
+        period: "2025-01-03"
+        text: "-"
 
       - name: "네트워크 관리사 2급"
-        subname: "네트워크 관리 자격증
-        period: "2024"
-        text: "한국정보통신자격협회"
+        subname: "한국정보통신자격협회"
+        period: "2024-10-08"
+        text: "-"
 
-      - name: "리눅스 마스터 2급"
-        subname: "리눅스 운영 체제 자격증
-        period: "2024"
-        text: "한국정보통신진흥협회"
+      - name: "정보처리산업기사"
+        subname: "한국산업인력공단"
+        period: "2025-06-13"
+        text: "-"
 
   experience:
     title: "학과 프로젝트"
@@ -163,8 +163,78 @@ testimonials:
       role: "방화벽 구축"
       text: "방화벽 구축 등 네트워크 보안 프로젝트에서 중요한 역할을 했습니다."
 
+    - image: "assets/img/testimonials/testi4-3.jpg"
+      name: "Jennifer Smith"
+      role: "CEO &amp; Founder"
+      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+
+    - image: "assets/img/testimonials/testi4-5.jpg"
+      name: "Paul Freeman"
+      role: "Photographer"
+      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
 
 
+### Pricing [ pricing ]
+pricing:
+  title: "Pricing"
+  subtitle: "my <b>Price Board</b>"
+  bg_title: "Pricing"
+
+  items:
+    - name: "Hourley Basis"
+      center: false
+      price: "39 <b>$</b>"
+      price_after: "Hour"
+      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida."
+      list:
+        - value: "Brand Design"
+          included: true
+        - value: "Web Development"
+          included: true
+        - value: "Advertising"
+          included: false
+        - value: "Photography"
+          included: false
+      button:
+        label: "Start Project"
+        link: "#contact-section"
+
+    - name: "Freelancing"
+      center: true
+      label: "Popular"
+      price: "259 <b>$</b>"
+      price_after: "Week"
+      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida."
+      list:
+        - value: "Brand Design"
+          included: true
+        - value: "Web Development"
+          included: true
+        - value: "Advertising"
+          included: true
+        - value: "Photography"
+          included: false
+      button:
+        label: "Start Project"
+        link: "#contact-section"
+
+    - name: "Full Time"
+      center: false
+      price: "1.249 <b>$</b>"
+      price_after: "Month"
+      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida."
+      list:
+        - value: "Brand Design"
+          included: true
+        - value: "Web Development"
+          included: true
+        - value: "Advertising"
+          included: true
+        - value: "Photography"
+          included: true
+      button:
+        label: "Start Project"
+        link: "#contact-section"
 
 
 ### Blog [ blog ]
