@@ -1,14 +1,13 @@
 ---
 layout: post
-title:  LOG4shell 보고서서
+title:  LOG4shell 보고서
 date:   2025-03-24
 category: Design
 image: assets/img/5_28_work/log4shell.jpg
-author: Ryan Adlard
+author: 이태강
 tags: code
 ---
 
-사이버 보안과 2학년 2420110205 이태강 
 1.	Log4Shell이란?
 Apache Log4j라는 Java 기반 로깅 라이브러리에서 발견된 원격 코드 실행(RCE) 취약점
 1.	높은 위험도: CVSS 점수 10점(최고 점수)을 받았으며, 광범위한 영향으로 인해 매우 위험합니다.
