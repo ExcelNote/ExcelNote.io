@@ -3,7 +3,7 @@ layout: post
 title:  "SKT 유심 정보 유출 보고서"
 date:   2025-04-29
 category: Music
-image: assets\img\5_28_work\USIM.jpg
+image: assets/img/5_28_work/USIM.jpg
 author: 이태강
 tags: rock
 ---
@@ -229,7 +229,7 @@ LTE 네트워크에서 HSS(Home Subscriber Server)는 USIM의 암호키(Ki), IMS
 <원본 단말기 전원이 꺼졌을 때의 다이어그램> 
 
 
-
+-----------------------------------------------------------------------------
 sequenceDiagram   
 
     participant 복제폰   
@@ -251,7 +251,7 @@ sequenceDiagram
     복제폰-->>MSC/VLR: 통신 시작   
 
     Note over HLR: Implicit Detach Timer 만료 후 IMSI 완전 차단   
-
+------------------------------------------------------------------------------
  
 
  
@@ -399,24 +399,25 @@ eBPF 실시간 추적 도구 도입
 
 sudo bpftrace -e 'tracepoint:syscalls:sys_enter_bpf { printf("BPF 프로그램 로드: %s\n", str(args->prog->aux->name)); }' 
 
-
+<br/><br/>
 
 비정상 패킷 탐지: 
 
-네트워크 트래픽에서 매직 패킷을 식별하기 위해 특정 헤더 값 또는 암호화된 명령어를 시그니처로 등록하고 BPF필터를 활용해 의심 패킷을 커널단에서 차단한다. 
+네트워크 트래픽에서 매직 패킷을 식별하기 위해 특정 헤더 값 또는 암호화된 명령어를 시그니처로 등록하고 BPF필터를 활용해 의심 패킷을 커널단에서 차단한다. <br/><br/>
 
-from scapy.all import *  
-
-def detect_magic_packet(pkt): if TCP in pkt and pkt[TCP].dport == 443: 
-
-     if pkt[Raw].load[16:20] == b'\x52\x93\x00\x00': # 매직 넘버 0x5293 
-
-                  alert("Magic packet detected!") 
-
- sniff(filter="tcp", prn=detect_magic_packet) 
-
- 
-
+----------------------------------------------------------------------------------|
+|from scapy.all import *                                                          |
+|                                                                                 |
+|def detect_magic_packet(pkt): if TCP in pkt and pkt[TCP].dport == 443:           |
+|                                                                                 |
+|     if pkt[Raw].load[16:20] == b'\x52\x93\x00\x00': # 매직 넘버 0x5293           |
+|                                                                                 |
+|                  alert("Magic packet detected!")                                |
+|                                                                                 |
+| sniff(filter="tcp", prn=detect_magic_packet)                                    |
+|                                                                                 |
+----------------------------------------------------------------------------------|
+<br/><br/>
 
 
 포렌식 대응 체계 
@@ -427,18 +428,18 @@ def detect_magic_packet(pkt): if TCP in pkt and pkt[TCP].dport == 443:
 
 sudo aideinit  
 
-sudo aide --check 
+sudo aide --check <br/>
 
 
 
 의심 파일 대응 
 
-해시 값이 변경된 파일은 즉시 격리하고, 메모리 덤프 분석을 통해 악성 코드 여부를 확인 
+해시 값이 변경된 파일은 즉시 격리하고, 메모리 덤프 분석을 통해 악성 코드 여부를 확인 <br/><br/>
 
  
 
 
-
+<br/><br/>
 [참고 문헌] 
 
 Tuxcare, 고급 리눅스 성능 모니터링 및 보안을 위한 eBPF, https://tuxcare.com/ko/blog/ebpf-for-advanced-linux-performance-monitoring-and-security/ 
