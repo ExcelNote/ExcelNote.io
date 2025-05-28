@@ -234,19 +234,18 @@ sequenceDiagram
     participant HLR
     participant MSC/VLR
 
-    원본폰->>HLR: 전원 OFF → HLR에서<br>IMSI 비활성화 지연
+    원본폰->>HLR: 전원 OFF → HLR에서\nIMSI 비활성화 지연
 
-    복제폰->>MSC/VLR: IMSI로<br>Location Update 요청
+    복제폰->>MSC/VLR: IMSI로\nLocation Update 요청
 
     MSC/VLR->>HLR: IMSI 상태 확인
 
-    HLR-->>MSC/VLR: "IMSI 비활성화"로 간주<br>→ 접속 허용
+    HLR-->>MSC/VLR: "IMSI 비활성화"로 간주\n→ 접속 허용
 
     복제폰-->>MSC/VLR: 통신 시작
 
-    Note over HLR: Implicit Detach Timer<br>만료 후 IMSI 완전 차단
+    Note over HLR: Implicit Detach Timer\n만료 후 IMSI 완전 차단
 
- <br/><br/>
 
  
 
