@@ -84,7 +84,7 @@ skills:
         text: "JS는 웹 개발에서 널리 사용되는 프로그래밍 언어로, 동적 웹 페이지를 만들고 사용자 인터랙션을 처리하는 데 사용됩니다."
         value: "75" #0-100 progress in %
 
-      - label: "리눅스스" #0-10 progress in dots
+      - label: "리눅스" #0-10 progress in dots
         text: "리눅스는 오픈 소스 운영 체제로, 서버, 데스크톱 및 임베디드 시스템에서 널리 사용됩니다."
         value: "70" #0-100 progress in %
 
