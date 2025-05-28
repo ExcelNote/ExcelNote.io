@@ -11,12 +11,11 @@
 
 				<!-- logo -->
 				<div class="logo">
- 					 <a href="{{ site.url }}">
-    				 <button type="button" style="background: none; border: none; padding: 0;">
-     				 <img src="/assets/img/taegangs-logo.png" alt="TAEGANGS'S" width="120" height="40">
-   					 </button>
-  					 </a>
+  					<a href="{{ site.url }}">
+   					<img width="{{ header.logo.width }}" height="{{ header.logo.height }}" src="{{ header.logo.image | relative_url }}" alt="{{ header.logo.alt }}" />
+  					</a>
 				</div>
+
 
 
 			</div>
