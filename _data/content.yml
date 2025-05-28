@@ -71,31 +71,31 @@ skills:
   column1:
     items:
       - label: "C 언어" #0-10 progress in dots
-        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+        text: "C 언어는 시스템 소프트웨어 및 응용 프로그램 소프트웨어를 개발하는 데 사용되는 프로그래밍 언어입니다."
         value: "85" #0-100 progress in %
 
       - label: "Python" #0-10 progress in dots
-        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+        text: "파이선 은 웹 애플리케이션, 데이터 분석 및 머신 러닝을 포함한 다양한 응용 프로그램을 개발하는 데 사용됩니다."
         value: "75" #0-100 progress in %
 
   column2:
     items:
       - label: "JavaScript" #0-10 progress in dots
-        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+        text: "JS는 웹 개발에서 널리 사용되는 프로그래밍 언어로, 동적 웹 페이지를 만들고 사용자 인터랙션을 처리하는 데 사용됩니다."
         value: "75" #0-100 progress in %
 
-      - label: "React" #0-10 progress in dots
-        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+      - label: "리눅스스" #0-10 progress in dots
+        text: "리눅스는 오픈 소스 운영 체제로, 서버, 데스크톱 및 임베디드 시스템에서 널리 사용됩니다."
         value: "70" #0-100 progress in %
 
   column3:
     items:
-      - label: "WordPress" #0-10 progress in dots
-        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+      - label: "AI 기반 위협 인텔리전스 통합 방안" #0-10 progress in dots
+        text: "보안 위협 인텔리전스 통합 방안은 AI 기술을 활용하여 사이버 공격을 사전에 탐지하고 대응하는 방법입니다."
         value: "90" #0-100 progress in %
 
-      - label: "네트워크" #0-10 progress in dots
-        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+      - label: "네트워크 관리" #0-10 progress in dots
+        text: "네트워크의 설치, 구성 및 유지 관리를 담당하는 IT 전문가입니다."
         value: "80" #0-100 progress in %
 
 ### Resume [ resume ]
@@ -118,21 +118,21 @@ resume:
         text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
 
       - name: "IT Future"
-        subname: "High School"
-        period: "2010 - 2012"
+        subname: "00 High School"
+        period: "2011 - 2014"
         text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
 
   experience:
-    title: "Experience"
+    title: "학과 프로젝트"
     items:
-      - name: "플라잉 더치맨 호 선장"
-        subname: "융합 프로젝트"
+      - name: "IPS및 방화벽 적용 네트워크"
+        subname: "팀 '플라잉 더치맨 호' 관리자"
         period: "2025.03.11 - <b>Present</b>"
-        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+        text: "보안 망 구축을 위한 IPS 및 방화벽 적용 네트워크 구축 프로젝트를 수행하였습니다. 이 프로젝트는 사이버 보안의 기초를 다지는 데 중요한 역할을 했습니다."
 
-      - name: "UI / UX Specialist"
-        subname: "Kana Design Studio"
-        period: "2018 - 2020"
+      - name: "네트워크 관리를 위한 웹페이지"
+        subname: "간단한 SIEM 구축"
+        period: "2025.03.11 - <b>Present</b>"
         text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
 
       - name: "Plugins Developer"
@@ -143,35 +143,25 @@ resume:
 
 ### Testimonials [ testimonials ]
 testimonials:
-  title: "Testimonials"
-  subtitle: "what <b>Customers Say</b>"
+  title: "프로젝트 팀원"
+  subtitle: "what <b>Team Say</b>"
   bg_title: "Reviews"
 
   items:
     - image: "assets/img/testimonials/testi4-2.jpg"
-      name: "Barbara Wilson"
-      role: "CEO Company"
-      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+      name: "김윤중"
+      role: "IPS Developer"
+      text: "IPS 및 접근 리스트 등 네트워크 구축 프로젝트에서 중요한 역할을 했습니다. "
 
     - image: "assets/img/testimonials/testi4-1.jpg"
-      name: "Charlie Smith"
-      role: "Designer"
-      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+      name: "윤대환"
+      role: "Web Designer"
+      text: "계정 및 시스템 관리를 위한 웹페이지 구축 프로젝트에서 중요한 역할을 했습니다. "
 
     - image: "assets/img/testimonials/testi4-4.jpg"
-      name: "Roy Wang"
-      role: "Manager GYM"
-      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-
-    - image: "assets/img/testimonials/testi4-3.jpg"
-      name: "Jennifer Smith"
-      role: "CEO &amp; Founder"
-      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-
-    - image: "assets/img/testimonials/testi4-5.jpg"
-      name: "Paul Freeman"
-      role: "Photographer"
-      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+      name: "이태훈"
+      role: "방화벽 구축"
+      text: "방화벽 구축 등 네트워크 보안 프로젝트에서 중요한 역할을 했습니다."
 
 
 ### Pricing [ pricing ]
