@@ -1,11 +1,11 @@
 ---
 # preview details
 layout: works-single
-title: Explore
+title: 언어 코딩
 category: Development
 category_slug: development
 image: assets/img/works/work7.jpg
-short_description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.
+short_description: 코딩 작업했던 기록들입니다.
 
 # full details
 live_preview: https://bslthemes.com
