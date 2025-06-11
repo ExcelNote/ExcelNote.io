@@ -2,16 +2,16 @@
   
     {
       "title"    : "KS한국 고용 침해사고",
-      "category" : "Video",
+      "category" : "news",
       "tags"     : "Jekyll",
-      "url"      : "/video/2025/05/14/ks-hacking/",
+      "url"      : "/news/2025/05/14/ks-hacking/",
       "date"     : "2025-05-14 00:00:00 +0900"
     } ,
   
     {
       "title"    : "SKT 유심 정보 유출 보고서",
       "category" : "Music",
-      "tags"     : "rock",
+      "tags"     : "news",
       "url"      : "/music/2025/04/29/SKT-%EC%9C%A0%EC%8B%AC-%EC%A0%95%EB%B3%B4-%EC%9C%A0%EC%B6%9C-%EB%B3%B4%EA%B3%A0%EC%84%9C/",
       "date"     : "2025-04-29 00:00:00 +0900"
     } ,
@@ -19,7 +19,7 @@
     {
       "title"    : "LOG4shell 보고서",
       "category" : "Design",
-      "tags"     : "code",
+      "tags"     : "news",
       "url"      : "/design/2025/03/24/LOG4SHELL/",
       "date"     : "2025-03-24 00:00:00 +0900"
     } 

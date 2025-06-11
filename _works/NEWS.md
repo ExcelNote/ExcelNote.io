@@ -1,10 +1,10 @@
 ---
 # preview details
 layout: works-single
-title: Kana
-category: Photography
-category_slug: photography
-image: assets/img/works/work6.jpeg
+title: NEWS
+category: NEWS
+category_slug: NEWS
+image: assets/img/works/work4.jpeg
 short_description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.
 
 # full details
@@ -15,7 +15,7 @@ info:
     value: 2022
 
   - label: Technology
-    value: Photoshop, XD
+    value: Figma, UI
 
 description1:
   show: yes

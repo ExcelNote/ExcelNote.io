@@ -1,11 +1,11 @@
 ---
 # preview details
 layout: works-single
-title: Mozar
-category: Photography
-category_slug: photography
-image: assets/img/works/work1.jpeg
-short_description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.
+title: CODE
+category: CODE
+category_slug: CODE
+image: assets/img/works/work7.jpg
+short_description: 코딩 작업했던 기록들입니다.
 
 # full details
 live_preview: https://bslthemes.com
@@ -15,7 +15,7 @@ info:
     value: 2022
 
   - label: Technology
-    value: Photoshop, XD
+    value: Development, JS
 
 description1:
   show: yes
