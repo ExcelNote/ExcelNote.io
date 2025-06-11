@@ -56,7 +56,7 @@ services:
       button_label: "자료 보기"
       button_link: "#pricing-section"
 
-    - title: "linux ooperation system"
+    - title: "linux operation system"
       subtitle: "OS Operation"
       text: "linux는 오픈 소스 운영 체제로, 서버, 데스크톱 및 임베디드 시스템에서 널리 사용됩니다."
       button_label: "자료 보기"
@@ -262,12 +262,12 @@ contacts:
       icon: "far fa-address-book"
       text: "+082 010 - 0000 - 0000"
 
-### Portfolio [ portfolio ]
-#items generates from dir /_works/*
-portfolio:
-  title: "Portfolio"
-  subtitle: "my <b>Cases</b>"
-  bg_title: "Portfolio"
-  button:
-    link: "works/"
-    label: "View More"
+# ### Portfolio [ portfolio ]
+# #items generates from dir /_works/*
+# portfolio:
+#   title: "Portfolio"
+#   subtitle: "my <b>Cases</b>"
+#   bg_title: "Portfolio"
+#   button:
+#     link: "works/"
+#     label: "View More"
