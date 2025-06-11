@@ -1,11 +1,11 @@
 ---
 # preview details
 layout: works-single
-title: 언어 코딩
-category: Development
-category_slug: development
-image: assets/img/works/work7.jpg
-short_description: 코딩 작업했던 기록들입니다.
+title: PROJECT
+category: PROJECT
+category_slug: PROJECT
+image: assets/img/works/work6.jpeg
+short_description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.
 
 # full details
 live_preview: https://bslthemes.com
@@ -15,7 +15,7 @@ info:
     value: 2022
 
   - label: Technology
-    value: Development, JS
+    value: Photoshop, XD
 
 description1:
   show: yes

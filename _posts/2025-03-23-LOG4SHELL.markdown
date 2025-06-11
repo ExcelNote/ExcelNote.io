@@ -5,7 +5,7 @@ date:   2025-03-24
 category: Design
 image: assets/img/5_28_work/log4shell.jpg
 author: 이태강
-tags: code
+tags: news
 ---
 
 Log4Shell이란?

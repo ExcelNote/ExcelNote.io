@@ -10,13 +10,13 @@ settings:
 preloader:
   logo:
     image: "assets/img/logo2.png"
-    alt: "Zoé Miller"
+    alt: "Lee Taegang"
 
 ### Header
 header:
   logo:
     image: "assets/img/logo2.png"
-    alt: "Zoé Miller"
+    alt: "Lee Taegang"
 
 ### Social
 social:
@@ -41,14 +41,11 @@ footer:
 portfolio:
   layout: "list" # select works layout options: "Grid" or "List"
   filters:
-    - name: "UI UX Design"
-      slug: "ui-ux-design"
+    - name: "NEWS"
+      slug: "NEWS"
 
-    - name: "Photography"
-      slug: "photography"
+    - name: "CODE"
+      slug: "CODE"
 
-    - name: "Development"
-      slug: "development"
-
-    - name: "Branding"
-      slug: "branding"
+    - name: "PROJECT"
+      slug: "PROJECT"
