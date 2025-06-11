@@ -9,22 +9,22 @@ short_description: 교내 프로젝트
 
 # full details
 live_preview: https://bslthemes.com
-full_image: assets/img/works/single1.jpg
+full_image: assets/img/project/1-1.png
 info:
   - label: Year
     value: 2025
 
   - label: Technology
-    value: Photoshop, XD
+    value: PROJECT
 
 description1:
   show: yes
-  title: Project Goal
+  title: Project PPT
   text: "<p>방화벽 및 IPS모듈을 적용한 네트워크 관리 페이지 제작입니다.</p>
   <p>Donec imperdiet risus at tortor consequat maximus et eget magna. Cras ornare sagittis augue, id sollicitudin justo tristique ut. Nullam ex enim, euismod vel bibendum ultrices, fringilla vel eros. Donec euismod leo lectus, et euismod metus euismod sed. Quisque quis suscipit ipsum, at pellentesque velit. Duis a congue sem.</p>"
 
 gallery:
-  - assets/img/project/1-1.png
+
   - assets/img/project/1-2.png
   - assets/img/project/1-3.png
   - assets/img/project/1-4.png
