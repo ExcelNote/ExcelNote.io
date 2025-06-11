@@ -4,15 +4,15 @@ layout: works-single
 title: NEWS
 category: NEWS
 category_slug: NEWS
-image: assets/img/works/work4.jpeg
-short_description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.
+image: assets/img/works/news.png
+short_description: 최신 보안에 관한 뉴스들입니다. 
 
 # full details
 live_preview: https://bslthemes.com
-full_image: assets/img/works/single1.jpg
+full_image: assets/img/works/news.png
 info:
   - label: Year
-    value: 2022
+    value: 2025
 
   - label: Technology
     value: Figma, UI

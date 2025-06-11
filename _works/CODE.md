@@ -4,7 +4,7 @@ layout: works-single
 title: CODE
 category: CODE
 category_slug: CODE
-image: assets/img/works/work7.jpg
+image: assets/img/works/code.png
 short_description: 코딩 작업했던 기록들입니다.
 
 # full details
@@ -12,7 +12,7 @@ live_preview: https://bslthemes.com
 full_image: assets/img/works/single1.jpg
 info:
   - label: Year
-    value: 2022
+    value: 2025
 
   - label: Technology
     value: Development, JS

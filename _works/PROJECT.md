@@ -4,7 +4,7 @@ layout: works-single
 title: PROJECT
 category: PROJECT
 category_slug: PROJECT
-image: assets/img/works/work6.jpeg
+image: assets/img/works/project.png
 short_description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.
 
 # full details
@@ -12,7 +12,7 @@ live_preview: https://bslthemes.com
 full_image: assets/img/works/single1.jpg
 info:
   - label: Year
-    value: 2022
+    value: 2025
 
   - label: Technology
     value: Photoshop, XD
