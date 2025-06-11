@@ -15,7 +15,7 @@ info:
     value: 2025
 
   - label: Technology
-    value: Figma, UI
+    value: 보안 뉴스
 
 description1:
   show: yes

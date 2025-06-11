@@ -15,7 +15,7 @@ info:
     value: 2025
 
   - label: Technology
-    value: PROJECT
+    value: NETWORK
 
 description1:
   show: yes

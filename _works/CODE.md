@@ -15,7 +15,7 @@ info:
     value: 2025
 
   - label: Technology
-    value: Development, JS
+    value: Development, CODE
 
 description1:
   show: yes
